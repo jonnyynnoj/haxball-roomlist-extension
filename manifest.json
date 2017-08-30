@@ -1,0 +1,10 @@
+{
+    "manifest_version": 2,
+    "name": "Haxball Roomlist",
+    "description": "Fetches the haxball roomlist",
+    "version": "1.0",
+    "browser_action": {
+        "default_popup": "build/popup.html"
+    },
+    "permissions": ["activeTab"]
+}
