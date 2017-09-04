@@ -6,7 +6,7 @@ import Row from './row';
 import RoomListService from '../services/room-list-service';
 
 interface ListProps {
-    roomListService: RoomListService
+    roomListService: RoomListService;
 }
 
 interface RefreshProps {
@@ -77,7 +77,7 @@ export default class List extends React.Component<ListProps, {}> {
     render() {
         const { roomListService } = this.props;
 
-        if (!roomListService.getFilteredRooms().length) {
+        if (!roomListService.getSortedRooms().length) {
             return <Loading><Spinner className="fa fa-spinner" /> Loading...</Loading>;
         }
 
@@ -98,7 +98,7 @@ export default class List extends React.Component<ListProps, {}> {
                         </tr>
                     </thead>
                     <tbody>
-                        {roomListService.getFilteredRooms().map(room =>
+                        {roomListService.getSortedRooms().map(room =>
                             <Row key={room.id} room={room} roomListService={roomListService} />
                         )}
                     </tbody>

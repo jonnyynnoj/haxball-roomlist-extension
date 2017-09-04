@@ -6,8 +6,8 @@ import styled from 'styled-components';
 import RoomListService from '../services/room-list-service';
 
 interface ListProps {
-    room: Room,
-    roomListService: RoomListService
+    room: Room;
+    roomListService: RoomListService;
 }
 
 const Flag = styled.img`

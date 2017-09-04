@@ -24,7 +24,7 @@ export default class RoomListService {
         this.fetching = false;
     }
 
-    public getFilteredRooms(): Room[] {
+    public getSortedRooms(): Room[] {
         const sortByDistance = (a: Room, b: Room) => {
             return this.getDistanceToRoom(a) - this.getDistanceToRoom(b);
         };
