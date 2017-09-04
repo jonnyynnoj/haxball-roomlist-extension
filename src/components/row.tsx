@@ -44,30 +44,28 @@ const Players = styled.td`
     text-align: center;
 `;
 
-const row = ({ room, roomListService }: ListProps) => {
-    const getUrl = (room: Room) => {
-        let url = `http://haxball.com?roomid=${room.id}`;
+const getUrl = (room: Room) => {
+    let url = `http://haxball.com?roomid=${room.id}`;
 
-        if (room.hasPassword) {
-            url += '&pass=1';
-        }
+    if (room.hasPassword) {
+        url += '&pass=1';
+    }
 
-        return url;
-    };
-
-    return (
-        <Row>
-            <td>
-                <Name>
-                    <Flag src={`../images/flags/${room.country}.png`} />
-                    <Link href={getUrl(room)} target="_blank">{room.name}</Link>
-                </Name>
-            </td>
-            <Players>{room.players}/{room.maxPlayers}</Players>
-            <td>{(roomListService.getDistanceToRoom(room) / 1000).toFixed(0)}km</td>
-            <td>{room.hasPassword && <i className="fa fa-lock" />}</td>
-        </Row>
-    );
+    return url;
 };
 
-export default observer(row);
+const Component = ({ room, roomListService }: ListProps) => (
+    <Row>
+        <td>
+            <Name>
+                <Flag src={`../images/flags/${room.country}.png`} />
+                <Link href={getUrl(room)} target="_blank">{room.name}</Link>
+            </Name>
+        </td>
+        <Players>{room.players}/{room.maxPlayers}</Players>
+        <td>{(roomListService.getDistanceToRoom(room) / 1000).toFixed(0)}km</td>
+        <td>{room.hasPassword && <i className="fa fa-lock" />}</td>
+    </Row>
+);
+
+export default observer(Component);
