@@ -4,14 +4,24 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress --colors"
+    "build": "cross-env NODE_ENV=production webpack --progress --colors",
+    "watch": "cross-env NODE_ENV=production webpack --progress --colors --watch"
   },
   "dependencies": {
-    "preact": "^8.2.5"
+    "geolib": "^2.0.23",
+    "haxball-roomlist-parser": "^1.0.1",
+    "mobx": "^3.2.2",
+    "mobx-react": "^4.2.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "styled-components": "^2.1.2"
   },
   "devDependencies": {
+    "@types/core-decorators": "^0.10.32",
     "@types/html-webpack-plugin": "^2.28.0",
     "@types/node": "^8.0.26",
+    "@types/react": "^16.0.5",
+    "@types/react-dom": "^15.5.4",
     "awesome-typescript-loader": "^3.2.3",
     "cross-env": "^5.0.5",
     "html-webpack-plugin": "^2.30.1",

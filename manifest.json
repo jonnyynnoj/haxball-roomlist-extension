@@ -4,7 +4,11 @@
     "description": "Fetches the haxball roomlist",
     "version": "1.0",
     "browser_action": {
-        "default_popup": "build/popup.html"
+        "default_popup": "build/popup.html",
+        "default_icon": "images/icon.png"
     },
-    "permissions": ["activeTab"]
+    "permissions": [
+        "geolocation",
+        "http://www.haxball.com/"
+    ]
 }

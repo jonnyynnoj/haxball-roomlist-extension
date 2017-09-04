@@ -1,9 +1,16 @@
 {
     "compilerOptions": {
         "jsx": "react",
-        "jsxFactory": "h",
         "moduleResolution": "node",
         "strict": true,
-        "target": "es6"
-    }
+        "target": "es6",
+        "experimentalDecorators": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "files": [
+        "webpack.config.ts"
+    ]
 }

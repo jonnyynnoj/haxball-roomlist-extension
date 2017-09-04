@@ -1,4 +1,12 @@
-import { h, render } from 'preact';
-import Container from './components/container';
+import * as React from 'react';
+import { render } from 'react-dom';
 
-render(<Container />, document.body);
+import List from './components/list';
+import RoomListService from './services/room-list-service';
+
+const roomListService = new RoomListService;
+
+render(
+    <List roomListService={roomListService} />,
+    document.getElementById('mount')
+);
